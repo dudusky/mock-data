@@ -1,0 +1,7 @@
+{
+    "city": "Tokyo",
+    "temperature": 25,
+    "description": "Clear sky",
+    "humidity": 60,
+    "wind_speed": 5
+}
