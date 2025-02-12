@@ -75,30 +75,6 @@
                 "labels": ["1月", "2月", "3月", "4月", "5月", "6月"],
                 "data": [35, 45, 35, 45, 55, 35]
             }
-        },
-        ...Array(10).fill().map((_, idx) => ({
-            id: idx + 3,
-            name: `施設 ${idx + 3}`,
-            address: `〒100-000${idx} 千葉市中央区施設町${idx + 1}`,
-            departments: ["診療科"],
-            stats: {
-                referrals: 100 + idx * 10,
-                outpatients: 50 + idx * 5,
-                inpatients: 25 + idx,
-                waitRate: 0.25 + idx * 0.01,
-                operationRate: 0.85 + idx * 0.02,
-                averageRevenue: 50000 + idx * 2000
-            },
-            marker: {
-                id: `marker-${idx + 3}`,
-                latitude: 35.5 + idx * 0.05, 
-                longitude: 139.7 + idx * 0.05,
-                color: idx % 2 === 0 ? "green" : "orange"
-            },
-            chart: {
-                labels: ["1月", "2月", "3月", "4月", "5月", "6月"],
-                data: [40, 30, 70, 30, 60, 20].map(value => value + idx * 5)
-            }
-        }))
+        }
     ]
 }
