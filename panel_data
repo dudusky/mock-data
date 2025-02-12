@@ -1,0 +1,104 @@
+ {
+    "header": {
+        "title": "紹介元 / 退院先施設",
+        "period": {
+            "start": "2022/10",
+            "end": "2024/9",
+            "facilityCount": 402
+        }
+    },
+    "filter": {
+        "specialty": "全診療科",
+        "sortOptions": [
+            "紹介数順",
+            "入院数順",
+            "入院待機率順",
+            "手術実施率順",
+            "日当収順",
+            "収入順"
+        ]
+    },
+    "facilities": [
+        {
+            "id": 1,
+            "name": "みつわ台総合病院",
+            "address": "〒264-0021 千葉市若葉区若松町531-486",
+            "departments": [
+                "内科",
+                "呼吸器科",
+                "消化器科",
+                "循環器科",
+                "外科",
+                "整形外科",
+                "形成外科",
+                "脳神経外科"
+            ],
+            "stats": {
+                "referrals": 149,
+                "outpatients": 102,
+                "inpatients": 27,
+                "waitRate": 0.315,
+                "operationRate": 0.85,
+                "averageRevenue": 82199
+            },
+            "marker": {
+                "id": "marker-1",
+                "latitude": 35.6895,
+                "longitude": 139.6917,
+                "color": "red"
+            },
+            "chart": {
+                "labels": ["1月", "2月", "3月", "4月", "5月", "6月"],
+                "data": [10, 50, 30, 80, 20, 60]
+            }
+        },
+        {
+            "id": 2,
+            "name": "千城台クリニック",
+            "address": "〒260-0001 千葉市中央区新町1-1",
+            "departments": ["内科", "小児科", "リハビリテーション科"],
+            "stats": {
+                "referrals": 132,
+                "outpatients": 90,
+                "inpatients": 42,
+                "waitRate": 0.318,
+                "operationRate": 0.95,
+                "averageRevenue": 64122
+            },
+            "marker": {
+                "id": "marker-2",
+                "latitude": 35.6075,
+                "longitude": 140.1234,
+                "color": "blue"
+            },
+            "chart": {
+                "labels": ["1月", "2月", "3月", "4月", "5月", "6月"],
+                "data": [35, 45, 35, 45, 55, 35]
+            }
+        },
+        ...Array(10).fill().map((_, idx) => ({
+            id: idx + 3,
+            name: `施設 ${idx + 3}`,
+            address: `〒100-000${idx} 千葉市中央区施設町${idx + 1}`,
+            departments: ["診療科"],
+            stats: {
+                referrals: 100 + idx * 10,
+                outpatients: 50 + idx * 5,
+                inpatients: 25 + idx,
+                waitRate: 0.25 + idx * 0.01,
+                operationRate: 0.85 + idx * 0.02,
+                averageRevenue: 50000 + idx * 2000
+            },
+            marker: {
+                id: `marker-${idx + 3}`,
+                latitude: 35.5 + idx * 0.05, 
+                longitude: 139.7 + idx * 0.05,
+                color: idx % 2 === 0 ? "green" : "orange"
+            },
+            chart: {
+                labels: ["1月", "2月", "3月", "4月", "5月", "6月"],
+                data: [40, 30, 70, 30, 60, 20].map(value => value + idx * 5)
+            }
+        }))
+    ]
+}
